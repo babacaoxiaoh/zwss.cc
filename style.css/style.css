@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>轮播横幅示例</title>
+<style>
+  /* 横幅样式 */
+  #banner {
+    width: 100%;
+    height: 150px; /* 高度可调整 */
+    overflow: hidden;
+    position: relative;
+    background: #f0f0f0; /* 背景色，可选 */
+  }
+  /* 轮播内容容器 */
+  #banner-images {
+    display: flex;
+    width: calc(5 * 100%);
+    animation: slide 20s linear infinite;
+  }
+  /* 每个图片区域 */
+  .slide {
+    width: 20%; /* 五个图片，每个占20% */
+    flex-shrink: 0;
+  }
+  /* 图片样式 */
+  .slide img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  /* 轮播动画 */
+  @keyframes slide {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(0); }
+    25%  { transform: translateX(-20%); }
+    45%  { transform: translateX(-20%); }
+    50%  { transform: translateX(-40%); }
+    70%  { transform: translateX(-40%); }
+    75%  { transform: translateX(-60%); }
+    95%  { transform: translateX(-60%); }
+    100% { transform: translateX(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- 横幅区域 -->
+<div id="banner">
+  <div id="banner-images">
+    <div class="slide"><img src="https://via.placeholder.com/800x150?text=图1" alt="图1" /></div>
+    <div class="slide"><img src="https://via.placeholder.com/800x150?text=图2" alt="图2" /></div>
+    <div class="slide"><img src="https://via.placeholder.com/800x150?text=图3" alt="图3" /></div>
+    <div class="slide"><img src="https://via.placeholder.com/800x150?text=图4" alt="图4" /></div>
+    <div class="slide"><img src="https://via.placeholder.com/800x150?text=图5" alt="图5" /></div>
+  </div>
+</div>
+
+</body>
+</html>
